@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <%- include('./partials/css') %>
+</head>
+
+<body  style="padding-inline: 1vw;">
+    <% if (locals.message) { %>
+
+        <div class="p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
+            <%= locals.message %>
+        </div>
+
+    <% } %>
+    
+    
+    <h1>Signup</h1>
+
+    <form style="width: 800px;" method="post" action="/users/validateSignup">
+        <!-- name -->
+         <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Full Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+        </div>
+
+
+        <!-- email -->
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" name="email" required>
+            </div>
+        </div>
+
+        <!-- password -->
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" name="password" required>
+            </div>
+        </div>
+        
+        <!-- button -->
+        <button type="submit" class="btn btn-primary">Sign up</button>
+    </form>
+
+    <%- include('./partials/script') %>
+</body>
+
+</html>
