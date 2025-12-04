@@ -16,6 +16,7 @@ connectDatabase('mongodb://127.0.0.1:27017/inventoryDashboard')
 .then(() => console.log('database connected.'))
 .catch((err) => console.log('error in database connection.'))
 
+
 // utiltiy middlewares
 app.use(cookieParser())
 app.use(express.urlencoded({extended : true}))
